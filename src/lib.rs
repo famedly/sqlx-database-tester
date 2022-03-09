@@ -17,6 +17,11 @@ pub use sqlx_database_tester_macros::test;
 
 const DATABASE_ENV_VAR: &str = "DATABASE_URL";
 
+#[cfg(not(any(feature = "use-rustls", feature = "use-native-tls")))]
+compile_error!(
+	r#"Either feature "use-rustls" or "use-native-tls" must be enabled for this crate."#
+);
+
 #[doc(hidden)]
 /// Extract optional prefix from the database specified in the connection string
 pub fn derive_db_prefix(uri: &str) -> http::Result<Option<String>> {
