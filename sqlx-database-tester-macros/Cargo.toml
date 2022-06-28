@@ -10,8 +10,11 @@ license = "AGPL-3.0"
 proc-macro = true
 
 [features]
+default = ["use-rustls"]
 runtime-actix = []
 runtime-tokio = []
+use-rustls = ["sqlx/runtime-tokio-rustls"]
+use-native-tls = ["sqlx/runtime-tokio-native-tls"]
 
 [dependencies]
 quote = "1.0.9"
@@ -20,5 +23,5 @@ darling = "0.13.0"
 proc-macro2 = "1.0.28"
 
 [dev-dependencies]
-sqlx = { version = "0.5.5", features = ["runtime-tokio-rustls", "postgres"] }
+sqlx = { version = "0.5.5", features = ["postgres"] }
 sqlx-database-tester = { version = "0.3.0", path = "..", features = ["runtime-tokio"] }
