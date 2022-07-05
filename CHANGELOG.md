@@ -2,7 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.3.1] - 2022-06-28 
+## [0.3.2] - 2022-07-05
+
+### Bug Fixes
+
+- Use correct sqlx-database-tester-macros version
+
+## [0.3.1] - 2022-06-28
 
 ### Bug Fixes
 
@@ -15,4 +21,3 @@ All notable changes to this project will be documented in this file.
 ### Refactor
 
 - Make new lints happy
-
