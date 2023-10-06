@@ -1,16 +1,5 @@
 # SQLX Database tester
 
-[![pipeline status][badge-pipeline-img]][badge-pipeline-url]
-[![coverage report][badge-coverage-img]][badge-coverage-url]
-[![docs main][badge-docs-main-img]][badge-docs-main-url]
-
-[badge-pipeline-img]: https://gitlab.com/famedly/company/backend/libraries/sqlx-database-tester/badges/main/pipeline.svg
-[badge-pipeline-url]: https://gitlab.com/famedly/company/backend/libraries/sqlx-database-tester/-/commits/main
-[badge-coverage-img]: https://gitlab.com/famedly/company/backend/libraries/sqlx-database-tester/badges/main/coverage.svg
-[badge-coverage-url]: https://gitlab.com/famedly/company/backend/libraries/sqlx-database-tester/-/commits/main
-[badge-docs-main-img]: https://img.shields.io/badge/docs-main-blue
-[badge-docs-main-url]: https://famedly.gitlab.io/company/backend/libraries/sqlx-database-tester/sqlx_database_tester/index.html
-
 This library makes it possible to create rust test cases for unit / integration testing with database access to unique databases per test case.
 
 Each database is created with the database name generated as UUID v4, to prevent any collision between test cases.
@@ -67,7 +56,7 @@ async fn test_server_start() {
 **This project is part of the source code of Famedly.**
 
 We think that software for healthcare should be open source, so we publish most
-parts of our source code at [gitlab.com/famedly](https://gitlab.com/famedly/company).
+parts of our source code at [github.com/famedly](https://github.com/famedly).
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of
 conduct, and the process for submitting pull requests to us.
@@ -97,4 +86,4 @@ the express prior written consent of Famedly GmbH.
 
 For more
 information take a look at [Famedly.com](https://famedly.com) or contact
-us by [info@famedly.com](mailto:info@famedly.com?subject=[GitLab]%20More%20Information%20)
+us by [info@famedly.com](mailto:info@famedly.com?subject=[GitHub]%20More%20Information%20)
