@@ -1,3 +1,6 @@
+// False positive, as far as I can tell
+#![allow(clippy::diverging_sub_expression)]
+
 use sqlx::{PgPool, Postgres, Transaction};
 
 #[sqlx_database_tester::test(
