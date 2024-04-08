@@ -1,7 +1,7 @@
 #![doc = include_str!("../README.md")]
 use std::{env, str::FromStr};
 
-pub use dotenv;
+pub use dotenvy;
 pub use sqlx_database_tester_macros::test;
 
 /// Environmental variable containing database URL

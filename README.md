@@ -10,7 +10,7 @@ The macro allows for creation and exposure of multiple databases per test functi
 
 ## Usage:
 - For the database connection itself, set up the env variable `DATABASE_URL` with a proper postgresql connection URI.
-  If `.env` exists, it will be used through the `dotenv` crate. (if it contains the database name, it will be used for a temporary database name prefix in form of `<PFX>_<UUID>`).
+  If `.env` exists, it will be used through the `dotenvy` crate. (if it contains the database name, it will be used for a temporary database name prefix in form of `<PFX>_<UUID>`).
 - Make sure that the user that connects to the database has permissions to create new databases.
 - You must specify one of features for this crate, `runtime-actix` or `runtime-tokio` for use of respective runtimes
 

@@ -169,7 +169,7 @@ pub fn test(test_attr: TokenStream, item: TokenStream) -> TokenStream {
 				}
 			}
 
-			sqlx_database_tester::dotenv::dotenv().ok();
+			sqlx_database_tester::dotenvy::dotenv().ok();
 			#(#database_name_vars)*
 			#runtime.block_on(async {
 				#[allow(clippy::expect_used)]
