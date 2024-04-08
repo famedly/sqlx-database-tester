@@ -21,7 +21,7 @@ dotenvy = "0.15.7"
 [dev-dependencies]
 sqlx = { version = "0.7.4", features = ["runtime-tokio-rustls", "postgres"] }
 sqlx-database-tester-macros = { path = "./sqlx-database-tester-macros", features = ["runtime-tokio"]}
-tokio = "1.10.0"
+tokio = "1.37.0"
 
 [workspace]
 members = ["./sqlx-database-tester-macros"]
