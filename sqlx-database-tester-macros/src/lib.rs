@@ -1,4 +1,5 @@
 //! macros for sqlx-database-tester
+#![allow(clippy::tabs_in_doc_comments)]
 
 use darling::{ast::NestedMeta, FromMeta};
 use proc_macro::TokenStream;
