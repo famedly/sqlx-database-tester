@@ -36,10 +36,12 @@ pub fn connect_options(
 		.expect("Failed to parse database URI");
 	options = options.database(database_name);
 	#[cfg(feature = "sqlx-log")]
-	if let Ok(filter) = log::LevelFilter::from_str(level) {
+	let options = if let Ok(filter) = log::LevelFilter::from_str(level) {
 		use sqlx::ConnectOptions;
-		options.log_statements(filter);
-	}
+		options.log_statements(filter)
+	} else {
+		options
+	};
 	options
 }
 
