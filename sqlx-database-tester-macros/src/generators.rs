@@ -10,7 +10,7 @@ use crate::{MacroArgs, Pool};
 /// Destructors for databases
 pub(crate) fn database_destructors(
 	test_attr: &MacroArgs,
-) -> Map<Iter<Pool>, fn(&Pool) -> TokenStream> {
+) -> Map<Iter<'_, Pool>, fn(&Pool) -> TokenStream> {
 	test_attr.pool.iter().map(|pool| {
 		let database_name = pool.database_name_var();
 		quote! {
@@ -51,7 +51,7 @@ fn pool_variable_clone_ident(name: &Ident) -> Ident {
 }
 
 /// Generate code for closing all databases
-pub(crate) fn database_closers(test_attr: &MacroArgs) -> Map<Iter<Pool>, fn(&Pool) -> TokenStream> {
+pub(crate) fn database_closers(test_attr: &MacroArgs) -> Map<Iter<'_, Pool>, fn(&Pool) -> TokenStream> {
 	test_attr.pool.iter().map(|Pool { variable, transaction_variable, .. }| {
 		let pool_variable_ident = pool_variable_clone_ident(variable);
 		let transaction_closer = transaction_variable.as_ref().map(|t| {
@@ -100,7 +100,7 @@ pub(crate) fn database_migrations_exposures(test_attr: &MacroArgs) -> Vec<TokenS
 /// Create databases
 pub(crate) fn database_creators(
 	test_attr: &MacroArgs,
-) -> Map<Iter<Pool>, fn(&Pool) -> TokenStream> {
+) -> Map<Iter<'_, Pool>, fn(&Pool) -> TokenStream> {
 	test_attr.pool.iter().map(|pool| {
 		let database_name = pool.database_name_var();
 		quote! {
@@ -116,7 +116,7 @@ pub(crate) fn database_creators(
 /// generated database names
 pub(crate) fn database_name_vars(
 	test_attr: &MacroArgs,
-) -> Map<Iter<Pool>, fn(&Pool) -> TokenStream> {
+) -> Map<Iter<'_, Pool>, fn(&Pool) -> TokenStream> {
 	test_attr.pool.iter().map(|pool| {
 		let database_name = pool.database_name_var();
 		quote! {
