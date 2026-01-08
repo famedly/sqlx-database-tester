@@ -1,6 +1,6 @@
 [package]
 name = "sqlx-database-tester"
-version = "0.5.0"
+version = "0.5.1"
 authors = ["Kateřina Churanová <crates@churanova.eu>"]
 edition = "2021"
 description = "Library for creation of unit / integration tests with sqlx database support"
